@@ -1,0 +1,7 @@
+{
+  "name": "Lito jaham",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
