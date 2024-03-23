@@ -1,0 +1,33 @@
+<ion-content *ngIf="step === 1" [fullscreen]="true">
+    <ion-text class="ion-text-center">
+        <h1>Toma una foto de tu póliza</h1>
+    </ion-text>
+    <ion-fab vertical="center" horizontal="center" slot="fixed">
+        <ion-fab-button (click)="addPhotoToGallery()">
+            <ion-icon name="camera"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+    <div *ngIf="photoService.photo && photoService.photo.webviewPath">
+        <ion-img [src]="photoService.photo.webviewPath"></ion-img>
+        <ion-button expand="block" (click)="sentPhoto()">Sigiente</ion-button>
+    </div>
+</ion-content>
+
+
+<ion-content *ngIf="step === 2" [fullscreen]="true">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <ion-list>
+            <ion-item>
+                <ion-input formControlName="name" labelPlacement="floating" label="Poliza nombre"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-textarea formControlName="description" labelPlacement="floating"
+                    label="Descripción"></ion-textarea>
+            </ion-item>
+
+            <ion-item>
+                <ion-button expand="block" type="submit">Registrarse</ion-button>
+            </ion-item>
+        </ion-list>
+    </form>
+</ion-content>

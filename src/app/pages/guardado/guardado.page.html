@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let item of polizas; let index">
+      <ion-avatar slot="start">
+        <img [src]="'https://picsum.photos/80/80?random=' + index" alt="avatar" />
+      </ion-avatar>
+      <ion-label>{{ item.name }}</ion-label>
+    </ion-item>
+
+
+
+    <ion-item-sliding *ngFor="let item of polizas; let index">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="'http://localhost:3000/' + item.logo" alt="avatar" />
+        </ion-avatar>
+        <ion-label>{{ item.name }}</ion-label>
+      </ion-item>
+
+      <ion-item-options>
+        <ion-item-option color="danger">Delete</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+</ion-content>
