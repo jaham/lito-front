@@ -2,8 +2,35 @@ ion-content {
     align-items: center;
 }
 
+ion-card {
+    padding: 15px;
+    width: 115px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 0.5px solid #69DCF3;
+    border-radius: 12px;
+}
+
+ion-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.ion-grid {
+    margin-top: 50px;
+}
+
+.title {
+    text-align: center;
+}
+
 .link-box {
     color: black;
-    text-align: center;
     font-size: 0.8em;
+    align-items: center;
+    text-align: center;
 }
