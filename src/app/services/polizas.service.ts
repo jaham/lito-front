@@ -37,6 +37,6 @@ export class PolizasService {
     const formData = new FormData();
     formData.append('file', capturedPhoto);
 
-    return this.http.post<{ "path": string }>(`${URL}aseguradoras/upload`, formData)
+    return this.http.post<{ "path": string, fieldname: string, filename: string, }>(`${URL}aseguradoras/upload`, formData)
   }
 }

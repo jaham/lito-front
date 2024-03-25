@@ -7,9 +7,9 @@
             <ion-icon name="camera"></ion-icon>
         </ion-fab-button>
     </ion-fab>
-    <div *ngIf="photoService.photo && photoService.photo.webviewPath">
+    <div *ngIf="photoService.photo && photoService.photo.webviewPath" class="img-poliza">
         <ion-img [src]="photoService.photo.webviewPath"></ion-img>
-        <ion-button expand="block" (click)="sentPhoto()">Sigiente</ion-button>
+        <ion-button class="bottom" expand="block" (click)="sentPhoto()">Sigiente</ion-button>
     </div>
 </ion-content>
 

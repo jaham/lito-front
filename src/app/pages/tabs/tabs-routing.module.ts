@@ -9,18 +9,22 @@ const routes: Routes = [
     children: [
       {
         path: 'inicio',
-        loadChildren: () => import('../inicio/inicio.module').then(m => m.InicioPageModule)
+        data: { title: "Inicio" },
+        loadChildren: () => import('../inicio/inicio.module').then(m => m.InicioPageModule),
       },
       {
         path: 'guardado',
+        data: { title: "Lista de pólizas" },
         loadChildren: () => import('../guardado/guardado.module').then(m => m.GuardadoPageModule)
       },
       {
         path: 'polizas',
+        data: { title: "Nueva póliza" },
         loadChildren: () => import('../polizas/polizas.module').then(m => m.PolizasPageModule)
       },
       {
         path: 'ayuda',
+        data: { title: "Ayuda" },
         loadChildren: () => import('../ayuda/ayuda.module').then(m => m.AyudaPageModule)
       },
       {

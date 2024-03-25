@@ -30,7 +30,7 @@ export class PolizasPage {
     const photoFile = await this.photoService.convertirArchivoAClaseFile(this.photoService.photo.webviewPath)
     this.polizasService.sentPhoto(photoFile).subscribe(data => {
       this.step = 2;
-      this.serverImgPath = data.path
+      this.serverImgPath = data.fieldname + "/" + data.filename
     })
   }
 
@@ -41,9 +41,15 @@ export class PolizasPage {
         logo: this.serverImgPath
       }
       this.polizasService.create(newPoliza).subscribe(data => {
-
+        this.reset();
       })
     }
+  }
+
+  reset() {
+    this.registerForm.reset()
+    this.step = 1
+    this.serverImgPath = ""
   }
 
 }
